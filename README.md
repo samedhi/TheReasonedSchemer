@@ -8,7 +8,7 @@ My solutions as I reason through the book. I have read this book in the past. Un
 
 ### What are you using?
 
-I am using [core.logic](https://github.com/clojure/core.logic) to work through this book. There are some [differences](https://github.com/clojure/core.logic/wiki/Differences-from-The-Reasoned-Schemer) between [core.logic](https://github.com/clojure/core.logic) and the version presented in this book (wihch is based upon Scheme).
+I am using [core.logic](https://github.com/clojure/core.logic) to work through this book. There are some [differences](https://github.com/clojure/core.logic/wiki/Differences-from-The-Reasoned-Schemer) between [core.logic](https://github.com/clojure/core.logic) and the version presented in this book (which is based upon Scheme).
 
 ### Gettting Started
 1. You need Clojure installed
@@ -18,3 +18,4 @@ Once you have the above, just cd into this project and execute:
 ```
 > boot repl
 ```
+OR if you have Cider installed you can `cider-jack-in` from within emacs.
