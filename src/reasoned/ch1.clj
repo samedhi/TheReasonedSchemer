@@ -53,19 +53,19 @@
     (fresh [x]
       (== true x))))
 
-;; > What observation can be made comparing the results of the following functions?
+;; > What observation can be made comparing this
 (run* [r]
   (fresh [x]
     (let [y x]
       (fresh [x]
-        (== (cons y (cons x (cons y (list)))) r)))))
-
+        (== (list x y z) r)))))
+;; > and the following evaluation?
 (run* [r]
   (fresh [x]
     (let [y x]
       (fresh [x]
-        (== (cons x (cons y (cons x (list)))) r)))))
-;; < The value associated is the same ((_0 _1 _0)), this is because r's values are reified
+        (== (list x y z) r)))))
+;; < The value associated is the same, this is because r's values are reified
 ;; < in the order in which they appear in the list.
 
 (run* [q]
@@ -109,6 +109,7 @@
   (fresh [x]
     (== true x)
     (== x q)))
+;; Yes, the are different variables that co-refer
 
 ;; > What does this demonstrate?
 (run* [q]
@@ -180,7 +181,6 @@
 ;; > What is the value of
 (run* [r]
   (teacupo r))
-;; <
 
 ;; > Given
 (defn teacupo [x]
@@ -194,7 +194,6 @@
      ((teacupo x) (== true y) s#)
      ((== false x) (== true y)))
     (== (list x y) r)))
-;; <
 
 (run* [r]
   (fresh [x y z]
