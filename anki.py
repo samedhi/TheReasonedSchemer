@@ -15,7 +15,7 @@ def parser(segments):
             s = ' '.join(gs) # combine multiline comments into one string
             xs.append({'text': s})
         else:
-            xs.append({'code': ''.join(map(lambda s: s.strip(), group))})
+            xs.append({'code': ''.join(group)})
     return xs
 
 def process_segment(segment):
@@ -53,3 +53,21 @@ for filename in filenames[0:1]:
                             print "===== CMD ======="
                             print ' '.join(CMD)
                             raise
+
+        cards = ['\t']
+        for segment in segments:
+            if 'expression' in segment:
+                d = segment['expression'][0]
+                cards.append('%s\t%s' % (d['code'], d['result']))
+            else:
+                question = []
+                for d in segment['question']:
+                    if 'text' in d:
+                        question.append(d['text'])
+                    else:
+                        question.append(d['code'].strip())
+                        question.append(' => %s' % d['result'])
+                question = '\n'.join(question)
+                cards.append('%s\t%s' % (question, segment['answer'][0]['text']))
+
+        print '\n'.join(cards)
