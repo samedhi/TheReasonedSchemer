@@ -58,13 +58,13 @@
   (fresh [x]
     (let [y x]
       (fresh [x]
-        (== (list x y z) r)))))
+        (== (list x y) r)))))
 ;; > and the following evaluation?
 (run* [r]
   (fresh [x]
     (let [y x]
       (fresh [x]
-        (== (list x y z) r)))))
+        (== (list x y) r)))))
 ;; < The value associated is the same, this is because r's values are reified
 ;; < in the order in which they appear in the list.
 
