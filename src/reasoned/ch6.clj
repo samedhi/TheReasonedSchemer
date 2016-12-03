@@ -1,6 +1,6 @@
 (ns reasoned.ch6
   (:require
-   [clojure.core.logic :as logic :refer [emptyo nilo run run* == u# s# fresh conde firsto lcons llist resto all alli]]
+   [clojure.core.logic :as logic :refer [emptyo nilo run run* == u# s# fresh conde firsto lcons llist resto all]]
    [reasoned.ch2 :refer [nullo cdro pairo conso caro]]
    [reasoned.ch1 :refer [teacupo]])
   (:refer-clojure :exclude [==]))
